@@ -1,0 +1,9 @@
+.header {
+    grid-area: h;
+    background: linear-gradient(to right, pink, darkviolet);
+}
+
+.header img {
+    width: 50px;
+    height: 50px;
+}

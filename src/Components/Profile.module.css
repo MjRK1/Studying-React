@@ -1,0 +1,14 @@
+.content {
+    grid-area: c;
+    background-color: #737dff;
+}
+
+.content-background{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.item {
+    color:greenyellow;
+}
