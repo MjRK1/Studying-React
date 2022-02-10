@@ -1,6 +1,6 @@
 .nav {
     grid-area: n;
-    background-color: #ff4b41;
+    background: linear-gradient(to left, pink, darkviolet);
 }
 
 .item {
