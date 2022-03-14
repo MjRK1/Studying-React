@@ -1,20 +1,24 @@
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
+
 const MyPosts = () => {
     return (
+        <div>
+            My Posts
             <div>
-                My Posts
-                <div>
-                    <textarea></textarea>
-                    <button>Add Post</button>
-                    <button>Remove</button>
-                </div>
-                <div className = 'posts'>
-                   <Post message = 'Hi, how are you?' likesCount = "0"/>
-                   <Post message = "It's my first post" likesCount = "23"/>
-
-                </div>
+                <textarea></textarea>
+                <button>Add Post</button>
+                <button>Remove</button>
             </div>
+            <div className='posts'>
+
+                <Post message='Hi, how are you?' likesCount="0"/>
+                <Post message="It's my first post" likesCount="23"/>
+                <Post message='Hi, how are you?'/>
+                <Post message="It's my first post"/>
+
+            </div>
+        </div>
     );
 }
 
