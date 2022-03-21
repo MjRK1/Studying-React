@@ -1,8 +1,12 @@
 import s from './Header.module.css';
+
 const Header = () => {
     return (
-        <header className= {s.header}>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Zeronet_logo.png" alt=""/>
+        <header className={s.header}>
+            <div className={s.logoName}>
+                <div className ={s.name}>Sidorenko</div>
+            </div>
+
         </header>
     );
 }

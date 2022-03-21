@@ -1,9 +1,19 @@
 .header {
     grid-area: h;
-    background: linear-gradient(to right, pink, darkviolet);
+    background: white;
 }
 
-.header img {
-    width: 50px;
-    height: 50px;
+.logoName {
+    display: flex;
+    height: 100%;
+    width: 200px;
+    align-items: center;
+
+    background-color: #26A69A;
+}
+
+.name {
+    padding-left: 20px;
+    color: white;
+    font-weight: bold;
 }
