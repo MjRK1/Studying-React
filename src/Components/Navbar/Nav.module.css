@@ -3,16 +3,19 @@
     background: linear-gradient(to left, pink, darkviolet);
 }
 
+
 .item {
-    color: white;
-}
-.link {
     color: white;
     text-decoration: none;
 }
-.link:hover {
-    color:#333333;
+.item:hover {
+    color:#333;
 }
-.item.active {
+.active {
     color: gold;
+    text-decoration: none;
+}
+.active:hover {
+    color:yellow;
+
 }
