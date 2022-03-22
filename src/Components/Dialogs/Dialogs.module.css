@@ -3,13 +3,35 @@
     grid-template-columns: 2fr 10fr;
 
 }
+.dialogsItemsName{
+    display: block;
 
-.dialogsItems {
+    text-align: center;
     padding: 10px;
+    margin: 10px;
+
+}
+.dialogsItems {
+    display: block;
+    padding: 10px;
+    margin: 10px;
+
+
+}
+.item {
+    color: #141414;
+    text-decoration: none;
+
 }
 
-.dialogsItems .active {
+.active {
+    display: block;
+    width:150%;
+    text-align: center;
+    height:30px;
+    padding-top: 10px;
     color: white;
+    text-decoration: none;
     background-color: #26A69A;
 }
 .dialog {
@@ -22,7 +44,10 @@
 
 
 .messages {
+    margin-left: 20px;
     padding: 10px;
+    padding-left: 80px;
+    border-left: grey 1.2px solid;
 }
 
 .messages .message {

@@ -1,11 +1,14 @@
+.postsBlocks{
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
 .posts{
     margin-top: 20px;
 }
 
-
-
 .addPost {
-    margin: 10px;
+    padding-top: 10px;
     display: grid;
     grid-template-areas:
             "A A A A"
