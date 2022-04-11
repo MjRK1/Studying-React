@@ -1,0 +1,30 @@
+.friendsTitle {
+    margin-left: 18px;
+    font-size: 36px;
+    color: white;
+}
+
+.friendsList {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 10px;
+    margin: 20px 10px 10px 0px;
+}
+.friendsListItem{
+    padding-left: 10px;
+}
+.friendsListAvatar img{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin-right: 10px;
+
+    box-shadow: 0 0 7px #333;
+}
+
+.itemName {
+    text-decoration: none;
+    color: #737271;
+
+}

@@ -1,34 +1,41 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
-
 }
-.dialogsItemsName{
-    display: block;
-
+.dialogsItem{
+    display: flex;
+    flex-direction: row;
     text-align: center;
+    justify-content: center;
+    flex-grow: 1;
     padding: 10px;
     margin: 10px;
 
+}
+.dialogsItemName{
+    width: 200px;
+    align-self: center;
+}
+.dialogsItemAvatar img{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin-right: 10px;
+
+    box-shadow: 0 0 7px #333;
 }
 .dialogsItems {
     display: block;
     padding: 10px;
     margin: 10px;
 }
-
-
 .item {
-
     color: #141414;
     text-decoration: none;
 }
 
-
-
 .active {
     display: block;
-    width:150%;
     text-align: center;
     height:30px;
     padding-top: 10px;
@@ -37,7 +44,6 @@
     background-color: #26A69A;
 }
 .dialog {
-
     height: 1.5rem;
     border: #FFFFFF 1px solid;
     padding: 5px 0px 0px 10px;
@@ -50,8 +56,4 @@
     padding: 10px;
     padding-left: 80px;
     border-left: grey 1.2px solid;
-}
-
-.messages .message {
-
 }
