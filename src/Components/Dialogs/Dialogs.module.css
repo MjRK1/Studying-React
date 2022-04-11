@@ -52,8 +52,40 @@
 
 
 .messages {
+    margin-top: 20px;
     margin-left: 20px;
     padding: 10px;
     padding-left: 80px;
     border-left: grey 1.2px solid;
+}
+
+.addMessage {
+    padding-top: 10px;
+    display: grid;
+    grid-template-areas:
+            "A A A A"
+            "B B  C C";
+    column-gap: 5px;
+    row-gap: 5px;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: repeat(9,1fr);
+    justify-items: stretch;
+
+}
+
+.textArea {
+    grid-area: A;
+    resize: none;
+    outline: none;
+
+    background-color: #F5F5F5;
+    color:#333333;
+
+}
+
+.addMessageButton {
+    grid-area: B;
+}
+.removeMessageButton{
+    grid-area: C;
 }
