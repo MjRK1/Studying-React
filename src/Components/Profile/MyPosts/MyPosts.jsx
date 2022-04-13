@@ -4,23 +4,32 @@ import React from "react";
 
 const MyPosts = (props) => {
 
-    let postsElements = props.posts.map(p => <Post className = {postMessage} message={p.message} likesCount={p.likesCount}/>);
+    let postsElements = props.posts.map(p => <Post className={postMessage} message={p.message}
+                                                   likesCount={p.likesCount}/>);
 
     let newPostElement = React.createRef();
 
     let addPost = () => {
+        props.addPost();
 
-        let text = newPostElement.current.value;
-        alert(text);
+    }
+    let removePostText = () => {
+        props.updateNewPostText('');
     }
 
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
+
+    }
     return (
         <div className={s.postsBlocks}>
             My Posts
             <div className={s.addPost}>
-                <textarea ref = {newPostElement} className={s.textArea}></textarea>
+                <textarea onChange={onPostChange} ref={newPostElement} className={s.textArea}
+                          value={props.newPostText}/>
                 <button onClick={addPost} className={s.addPostButton}>Add Post</button>
-                <button className={s.removePostButton}>Remove</button>
+                <button onClick={removePostText} className={s.removePostButton}>Remove</button>
             </div>
             <div className={s.posts}>
                 {postsElements}
