@@ -83,7 +83,7 @@
 
 }
 
-.addMessageButton {
+.sendMessageButton {
     grid-area: B;
 }
 .removeMessageButton{
