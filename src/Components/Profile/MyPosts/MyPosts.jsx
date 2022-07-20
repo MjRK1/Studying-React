@@ -8,10 +8,8 @@ const MyPosts = (props) => {
     let postsElements = props.posts.map(p => <Post className={postMessage} message={p.message}
                                                    likesCount={p.likesCount}/>);
     let newPostElement = React.createRef();
-
     let addPost = () => {
         props.addPost();
-
     }
     let removePostText = () => {
         props.removePost();
