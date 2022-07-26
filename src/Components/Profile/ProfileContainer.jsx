@@ -19,6 +19,7 @@ class ProfileContainer extends React.Component {
             });
     }
 
+
     render() {
         return (
             <Profile {...this.props}/>
@@ -28,7 +29,6 @@ class ProfileContainer extends React.Component {
 
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
-
 })
 
 function withRouter(Component) {

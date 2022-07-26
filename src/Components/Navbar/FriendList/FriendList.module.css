@@ -1,5 +1,6 @@
 .friendsTitle {
     margin-left: 18px;
+    font-family: Montserrat;
     font-size: 36px;
     color: white;
 }
@@ -24,6 +25,7 @@
 }
 
 .itemName {
+    font-family: Montserrat;
     text-decoration: none;
     color: #737271;
 

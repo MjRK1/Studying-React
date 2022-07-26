@@ -1,6 +1,6 @@
 .header {
     grid-area: h;
-    background: white;
+    background: #212121;
 }
 
 .logoName {
@@ -8,12 +8,55 @@
     height: 100%;
     width: 200px;
     align-items: center;
-
+    border-radius: 5px;
     background-color: #26A69A;
 }
 
 .name {
+    font-family: Montserrat;
+    font-size: 20px;
     padding-left: 20px;
     color: white;
-    font-weight: bold;
+}
+.loginBlock {
+    display: flex;
+    justify-content: center;
+    float:right;
+    width: 200px;
+    height: 100%;
+
+}
+.loginBlock a {
+    color: #FFFFFF;
+    font-family: Montserrat;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out ;
+}
+.loginBlock a:hover {
+    color: #26A69A;
+}
+.userInfo {
+    width: auto;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 25px 100px;
+    gap: 15px;
+    align-content: center;
+}
+.userAvatar {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+
+}
+.userLogin {
+    color: #FFFFFF;
+    font-family: Montserrat;
+    font-size: 20px;
+    transition: color 0.2s ease-in-out ;
+}
+.userLogin:hover {
+    color: #26A69A;
 }
