@@ -13,3 +13,15 @@
 .commonPage {
     padding-left: 5px;
 }
+.userList {
+    display: flex;
+    justify-content: space-between;
+}
+.userListItem {
+    max-width: 300px;
+    font-family: Montserrat;
+    margin: 15px 0 0 15px;
+}
+.userName {
+    font-size: 20px;
+}
