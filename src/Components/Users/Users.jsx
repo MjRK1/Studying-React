@@ -8,12 +8,12 @@ const Users = (props) => {
     let pages = [];
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
-        if (i == 20) break;
+        if (i == 50) break;
     }
     return <div>
-        <div>
+        <div className={styles.pagesNumbers}>
             {pages.map(p => {
-                return <span className={props.currentPage === p && styles.selectedPage}
+                return <span className={props.currentPage === p ? styles.selectedPage : styles.commonPage}
                              onClick={(e) => {
                                  props.onPageChanged(p)
                              }}>{p}</span>
@@ -22,7 +22,7 @@ const Users = (props) => {
         {props.users.map(u => <div key={u.id}>
                     <span>
                         <div>
-                            <NavLink to={'/profile/'+ u.id}>
+                            <NavLink to={'/profile/' + u.id}>
                                 <img src={u.photos.small != null ? u.photos.small : userPhoto}
                                      className={styles.userPhoto}/>
                             </NavLink>
