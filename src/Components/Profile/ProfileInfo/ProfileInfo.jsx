@@ -1,10 +1,32 @@
 import s from './ProfileInfo.module.css'
+import Preloader from "../../common/preloader/Preloader";
+import checkmark from "../../../assets/images/checkmark.png";
+import cross from "../../../assets/images/cross.png";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+    if (!props.profile) {
+        return <Preloader/>
+    }
+
     return (
-        <div>
+        <div className={s.userInfo}>
+            <div className={s.userName}>
+                {props.profile.fullName}
+            </div>
             <div className={s.descriptionBlock}>
-                ava+description
+                <img className={s.profilePhoto} src={props.profile.photos.large}/>
+            </div>
+            <div className={s.userProfileDescription}>
+                <div className={s.userAboutMe}>
+                    {props.profile.aboutMe}
+                </div>
+                <div className={s.userJobStatus}>
+                    <div className={s.lookingForAJobStatus}>
+                        <span>Ищу работу: {props.profile.lookingForAJob ?
+                            <img className={s.lookingForAJobStatusImage} src={checkmark}/> : <img src={cross}/>}</span>
+                    </div>
+                    <div className={s.lookingForAJobDescription}>{props.profile.lookingForAJobDescription}</div>
+                </div>
             </div>
         </div>
     );

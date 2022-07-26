@@ -11,9 +11,9 @@ const MyPosts = (props) => {
     let addPost = () => {
         props.addPost();
     }
-    let removePostText = () => {
+    /*let removePostText = () => {
         props.removePost();
-    }
+    }*/
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
@@ -26,7 +26,7 @@ const MyPosts = (props) => {
                 <textarea onChange={onPostChange} ref={newPostElement} className={s.textArea}
                           value={props.newPostText}/>
                 <button onClick={addPost} className={s.addPostButton}>Add Post</button>
-                <button onClick={removePostText} className={s.removePostButton}>Remove</button>
+                {/*<button onClick={removePostText} className={s.removePostButton}>Remove</button>*/}
             </div>
             <div className={s.posts}>
                 {postsElements}

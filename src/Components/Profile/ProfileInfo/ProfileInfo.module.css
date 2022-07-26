@@ -1,3 +1,41 @@
+.userInfo {
+    margin-bottom: 30px;
+}
 .descriptionBlock{
     padding: 10px;
+}
+.profilePhoto {
+    border-radius: 30%;
+    width: 300px;
+}
+.userName {
+    font-family: "Montserrat";
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0 0 0 10px;
+}
+.userProfileDescription {
+    margin-left: 30px;
+}
+.userAboutMe {
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-style: italic;
+
+    padding: 0 0 0 10px;
+}
+.userJobStatus {
+    font-family: "Montserrat";
+    font-size: 16px;
+    padding: 0 0 0 10px;
+    margin-top: 10px;
+}
+.lookingForAJobStatusImage {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+}
+.lookingForAJobDescription {
+    margin-top: 5px;
 }

@@ -8,7 +8,7 @@ let reducers = combineReducers({
     profilePage: profileReducer,
     dialogsPage: dialogsReducer,
     sidebarData: sidebarReducer,
-    usersPage: usersReducer
+    usersPage: usersReducer,
 });
 
 
