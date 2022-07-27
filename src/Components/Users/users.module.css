@@ -15,7 +15,7 @@
 }
 .userList {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .userListItem {
     max-width: 300px;
