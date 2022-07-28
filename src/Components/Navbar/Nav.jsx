@@ -9,10 +9,13 @@ const Nav = (props) => {
     return (
         <nav className={s.nav}>
             <div className={s.item}>
-                <NavLink to="/profile" className={setActive}>Profile</NavLink>
+                <NavLink to={"/profile/25077"} className={setActive}>Profile</NavLink>
             </div>
             <div className={s.item}>
                 <NavLink to="/dialogs" className={setActive}>Messages</NavLink>
+            </div>
+            <div className={s.item}>
+                <NavLink to="/friends" className={setActive}>Friends</NavLink>
             </div>
             <div className={s.item}>
                 <NavLink to="/users" className={setActive}>Users</NavLink>
@@ -26,7 +29,7 @@ const Nav = (props) => {
             <div className={s.item}>
                 <NavLink to="/settings" className={setActive}>Settings</NavLink>
             </div>
-            <Friends friendsList={store.getState().sidebarData.friendsList}/>
+            {/*<Friends friendsList={store.getState().sidebarData.friendsList}/>*/}
         </nav>);
 }
 export default Nav;

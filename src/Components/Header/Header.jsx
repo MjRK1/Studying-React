@@ -15,7 +15,9 @@ const Header = (props) => {
                             <div className={s.userLogin}>{props.login}</div>
                         </NavLink>
                     </div>
-                    : <NavLink to={'/login'}>Login</NavLink>}
+                    : <NavLink to={'/login'}>
+                        <div className={s.notAuthUserLogin}>Login</div>
+                    </NavLink>}
             </div>
             <div className={s.logoName}>
                 <div className={s.name}>Sidorenko</div>

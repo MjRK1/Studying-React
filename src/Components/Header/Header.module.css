@@ -11,7 +11,9 @@
     border-radius: 5px;
     background-color: #26A69A;
 }
+.notAuthUserLogin {
 
+}
 .name {
     font-family: Montserrat;
     font-size: 20px;
@@ -21,6 +23,7 @@
 .loginBlock {
     display: flex;
     justify-content: center;
+    align-items: center;
     float:right;
     width: 200px;
     height: 100%;

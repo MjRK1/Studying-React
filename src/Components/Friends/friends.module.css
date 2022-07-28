@@ -1,3 +1,17 @@
+.friends {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+}
+.friendsTitle {
+    font-family: Montserrat;
+    font-size: 36px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 400;
+    margin-top: 20px;
+}
 .userPhoto {
     width: 100px;
     height: 100px;

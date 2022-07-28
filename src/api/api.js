@@ -14,13 +14,19 @@ export const usersAPI = {
             return response.data
         })
     },
-    unfollowUser(id) {
-        return instance.delete('/follow/'+id).then(response => {
+    getFollowedUsers(currentPage = 1 , pageSize = 10) {
+        let flag = true;
+        return instance.get(`/users?friend=${flag}&page=${currentPage}&count=${pageSize}`).then (response => {
             return response.data
         })
     },
-    followUser(id) {
-        return instance.post('/follow/'+id).then(response => {
+    unfollowUser(userId) {
+        return instance.delete('/follow/'+userId).then(response => {
+            return response.data
+        })
+    },
+    followUser(userId) {
+        return instance.post('/follow/'+userId).then(response => {
             return response.data
         })
     }

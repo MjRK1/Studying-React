@@ -1,3 +1,6 @@
+import {headerAPI, profileAPI} from "../api/api";
+import {setUserProfile} from "./profile-reducer";
+
 const SET_USER_DATA = 'SET_USER_DATA';
 const GET_USER_AVATAR = 'GET_USER_AVATAR';
 
@@ -25,6 +28,22 @@ const authReducer = (state = initialState, action) => {
     }
 }
 
-export const setAuthUserData = (userId, email, login) => ({type: SET_USER_DATA, data: {userId, email, login}})
-export const getAuthUserAvatar = (image) => ({type: GET_USER_AVATAR, image})
+export const setAuthUserDataSucces = (userId, email, login) => ({type: SET_USER_DATA, data: {userId, email, login}})
+export const getAuthUserAvatarSucces = (image) => ({type: GET_USER_AVATAR, image})
+export const getAuthUserData = (userId) => {
+    return (dispatch) => {
+        headerAPI.getAuthUserData().then(data => {
+            if (data.resultCode === 0) {
+                let {id, login, email} = data.data;
+                dispatch(setAuthUserDataSucces(id, email, login));
+                profileAPI.getUserProfile(userId)
+                    .then(data => {
+                        dispatch(getAuthUserAvatarSucces(data.photos.small));
+                        dispatch(setUserProfile(data));
+                    });
+            }
+        });
+    }
+}
+
 export default authReducer;
