@@ -1,4 +1,4 @@
-import {headerAPI, profileAPI} from "../api/api";
+import {authAPI, profileAPI} from "../api/api";
 import {setUserProfile} from "./profile-reducer";
 
 const SET_USER_DATA = 'SET_USER_DATA';
@@ -32,7 +32,7 @@ export const setAuthUserDataSucces = (userId, email, login) => ({type: SET_USER_
 export const getAuthUserAvatarSucces = (image) => ({type: GET_USER_AVATAR, image})
 export const getAuthUserData = (userId) => {
     return (dispatch) => {
-        headerAPI.getAuthUserData().then(data => {
+        authAPI.getAuthUserData().then(data => {
             if (data.resultCode === 0) {
                 let {id, login, email} = data.data;
                 dispatch(setAuthUserDataSucces(id, email, login));
