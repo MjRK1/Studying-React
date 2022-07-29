@@ -10,7 +10,7 @@ const Friends = (props) => {
         pages.push(i);
         if (i == 50) break;
     }
-    return ( <>
+    return (<>
         <div className={styles.friendsTitle}>Your Friends</div>
         <div className={styles.friends}>
             <div className={styles.pagesNumbers}>
@@ -49,11 +49,10 @@ const Friends = (props) => {
                                             Follow</button>}
                                 </div>
                             </div>
-                            <span>
-                    <span>
-                        <div className={styles.userName}>{u.name}</div><div>{u.status}</div>
-                    </span>
-                </span>
+                            <div className={styles.userInfo}>
+                                <span className={styles.userName}>{u.name}</span>
+                                <div className={styles.userStatus}>{u.status}</div>
+                            </div>
                         </div>
                     }
                 })}

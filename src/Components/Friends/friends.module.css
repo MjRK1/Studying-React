@@ -57,12 +57,24 @@
     text-align: center;
     margin-top: 15px;
 }
+.userInfo {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+}
+.userStatus {
+    max-width: 263px;
+    text-align: center;
+}
 .Buttons {
     display: flex;
     justify-content: center;
 }
 .userName {
     font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;
 }
 .followButton {
     text-decoration: none;
