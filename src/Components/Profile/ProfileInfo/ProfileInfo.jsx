@@ -3,6 +3,7 @@ import Preloader from '../../common/preloader/Preloader';
 import checkmark from '../../../assets/images/checkmark.png';
 import cross from '../../../assets/images/cross.png';
 import defualtUserImg from '../../../assets/images/user.png'
+import ProfileStatus from './ProfileStatus'
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -16,7 +17,9 @@ const ProfileInfo = (props) => {
             <div className={s.descriptionBlock}>
                 <img className={s.profilePhoto}
                      src={props.profile.photos.large ? props.profile.photos.large : defualtUserImg}/>
+                <ProfileStatus status={'hello my friends'}/>
             </div>
+
             <div className={s.userProfileDescription}>
                 <div className={s.userAboutMe}>
                     {props.profile.aboutMe}
