@@ -8,11 +8,9 @@ import {compose} from "redux";
 
 class ProfileContainer extends React.Component {
     componentDidMount() {
-        let userId = this.props.router.params.userId;
+        let userId = 25077;
         this.props.setUserProfile(userId);
-       // setTimeout(() => {
-            this.props.getUserStatus(userId);
-       // }, 1000)
+        this.props.getUserStatus(userId);
     }
 
     render() {
