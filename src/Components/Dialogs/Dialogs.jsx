@@ -1,8 +1,9 @@
 import s from "./Dialogs.module.css";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import { Navigate } from 'react-router-dom'
-import React from "react";
+import {Navigate} from 'react-router-dom'
+import React, {useEffect} from "react";
+import {useForm, useWatch} from "react-hook-form";
 
 const Dialogs = (props) => {
     let state = props.dialogsPage;
@@ -14,10 +15,7 @@ const Dialogs = (props) => {
     let onSendMessageClick = () => {
         props.sendMessage();
     }
-    let onNewMessageChange = (e) => {
-        let body = e.target.value;
-        props.updateNewMessageBody(body);
-    }
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
@@ -26,15 +24,35 @@ const Dialogs = (props) => {
             <div className={s.messages}>
 
                 <div>{messageElement}</div>
-
-                <div className={s.addMessage}>
-                    <textarea value={newMessageBody} ref={newMessageElement} className={s.textArea} placeholder='Enter your message' onChange={onNewMessageChange}></textarea>
-                    <button onClick={onSendMessageClick} className={s.sendMessageButton}>Send</button>
-
-                </div>
+                <AddMessageForm sendMessage={onSendMessageClick} updateNewMessageBody={props.updateNewMessageBody}/>
             </div>
 
         </div>)
 }
 
+const AddMessageForm = (props) => {
+    const {
+        register,
+        handleSubmit,
+        watch,
+        reset,
+    } = useForm({
+        mode: "onChange"
+    });
+    const onSubmit = () => {
+        props.sendMessage();
+        reset();
+    }
+    const onChange = () => {
+        props.updateNewMessageBody(watch("newMessageBody"));
+    }
+    return (
+        <form onSubmit={handleSubmit(onSubmit)} onChange={handleSubmit(onChange)}>
+            <div className={s.addMessage}>
+                <input type="textarea" placeholder={"Your message"} {...register("newMessageBody")} className={s.textArea}/>
+                <button className={s.sendMessageButton}>Send</button>
+            </div>
+        </form>
+    )
+}
 export default Dialogs;
