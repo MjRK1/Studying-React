@@ -6,14 +6,17 @@ const Header = (props) => {
     return (
         <header className={s.header}>
             <div className={s.loginBlock}>
-                {props.isAuth ? <div className={s.userInfo}>
+                {props.isAuth
+                    ? <div className={s.userInfo}>
                         {props.image ? <NavLink to={'/profile/' + props.userId}><img className={s.userAvatar}
-                                                                                     src={props.image}/></NavLink> :
-                            <NavLink to={'/profile/' + props.userId}><img className={s.userAvatar}
-                                                                          src={defualtAvatar}/></NavLink>}
+                                                                                     src={props.image}/></NavLink>
+                        : <NavLink to={'/profile/' + props.userId}><img className={s.userAvatar} src={defualtAvatar}/></NavLink>}
                         <NavLink to={'/profile/' + props.userId}>
                             <div className={s.userLogin}>{props.login}</div>
                         </NavLink>
+                        <div className={s.logoutMenu}>
+                            <div onClick={props.logout} className={s.logoutButton}>Logout</div>
+                        </div>
                     </div>
                     : <NavLink to={'/login'}>
                         <div className={s.notAuthUserLogin}>Login</div>

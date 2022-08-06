@@ -43,18 +43,25 @@
     width: auto;
     height: 100%;
     display: grid;
+    grid-template-areas:
+    "A A A B B B"
+    "C C C C C C";
+    position: relative;
     grid-template-rows: auto;
     grid-template-columns: 25px 100px;
     gap: 15px;
+    row-gap: 0;
     align-content: center;
 }
 .userAvatar {
+    grid-area: A;
     width: 25px;
     height: 25px;
     border-radius: 50%;
 
 }
 .userLogin {
+    grid-area: B;
     color: #FFFFFF;
     font-family: Montserrat;
     font-size: 20px;
@@ -63,3 +70,35 @@
 .userLogin:hover {
     color: #26A69A;
 }
+.logoutMenu {
+    grid-area: C;
+    display: none;
+    font-family: Montserrat;
+    font-size: 16px;
+    color: #ff4b41;
+    text-align: center;
+    position: absolute;
+    min-width: 140px;
+    z-index: 1;
+}
+
+.userInfo:hover .logoutMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: auto;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(255, 246, 239);
+    transition: .2s;
+}
+.userInfo:hover .logoutMenu:hover {
+    background-color: #f63b4a;
+    color:#F5F5F5;
+    cursor: pointer;
+}
+.userInfo:hover .logoutMenu:focus {
+    background-color: #a92933;
+}
+

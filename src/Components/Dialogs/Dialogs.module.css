@@ -1,6 +1,7 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
+    font-family: Montserrat;
 }
 .dialogsItem{
     display: flex;
@@ -64,28 +65,63 @@
     display: grid;
     grid-template-areas:
             "A A A A"
-            "B B  C C";
+            "B B B B"
+            "C C C C";
     column-gap: 5px;
     row-gap: 5px;
     grid-template-rows: 60px 1fr;
     grid-template-columns: repeat(9,1fr);
     justify-items: stretch;
-
 }
 
 .textArea {
     grid-area: A;
     resize: none;
     outline: none;
-
-    background-color: #F5F5F5;
-    color:#333333;
+    display: block;
+    width: 100%;
+    padding: 0 20px;
+    background: white;
+    line-height: 40px;
+    border-width: 0;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
 
 }
-
-.sendMessageButton {
+.withoutSendMessageButton {
+    display: none;
+}
+.errorMessage {
+    grid-area: C;
+    font-size: 15px;
+    font-family: Montserrat;
+    margin-left: 10px;
+    color: #f63b4a;
+}
+.buttonBlock {
     grid-area: B;
 }
-.removeMessageButton{
-    grid-area: C;
+.sendMessageButton {
+    grid-area: B;
+    width: 130px;
+    height: 45px;
+    margin-top: 10px;
+    background: #29b4ab;
+    border: none;
+    border-bottom: 4px solid #269f9c;
+    color: white;
+    border-radius: 25px;
+    font-family: Montserrat;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 1px;
+    transition: .2s;
+}
+.sendMessageButton:hover {
+    background-color: #2dccc1;
+    color: white;
+    transform: translateY(-7px);
+}
+.sendMessageButton:focus {
+    background-color: #2fd9cd;
 }
