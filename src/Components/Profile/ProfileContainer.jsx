@@ -9,6 +9,12 @@ import {compose} from "redux";
 class ProfileContainer extends React.Component {
     componentDidMount() {
         let userId = this.props.router.params.userId
+        if (!userId) {
+            userId = this.props.authorizedUserId;
+            if (!userId) {
+                this.props.history.push("/login");
+            }
+        }
         this.props.setUserProfile(userId);
         this.props.getUserStatus(userId);
     }
@@ -38,6 +44,7 @@ function withRouter(Component) {
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
     status: state.profilePage.status,
+    authorizedUserId: state.auth.userId,
 })
 
 

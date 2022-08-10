@@ -30,7 +30,7 @@ export const setAuthUserDataSuccess = (userId, email, login, isAuth) => ({type: 
 export const getAuthUserAvatarSuccess = (image) => ({type: GET_USER_AVATAR, image})
 export const getAuthUserData = () => {
     return (dispatch) => {
-        authAPI.getAuthUserData().then(data => {
+        return authAPI.getAuthUserData().then(data => {
             if (data.resultCode === 0) {
                 let {id, login, email} = data.data;
                 dispatch(setAuthUserDataSuccess(id, email, login, true));
