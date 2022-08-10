@@ -20,7 +20,6 @@ class ProfileContainer extends React.Component {
     }
 }
 
-let AuthRedirectComponent = withAuthRedirect(ProfileContainer);
 
 function withRouter(Component) {
     function ComponentWithRouterProp(props) {

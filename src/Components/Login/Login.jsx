@@ -9,21 +9,22 @@ const LoginForm = (props) => {
     const {
         register,
         handleSubmit,
-        watch,
         formState: {errors},
         reset,
-        setValue
+        setError,
+        clearErrors
     } = useForm({
         criteriaMode: "all",
     });
     const onSubmit = formData => {
-        props.login(formData.email, formData.password, formData.rememberMe);
+        props.login(formData.email, formData.password, formData.rememberMe, setError);
         reset();
     }
+    console.log(errors)
     return (
-        <form className={s.loginForm} onSubmit={handleSubmit(onSubmit)}>
+        <form className={s.loginForm} onSubmit={handleSubmit(onSubmit)} onError={handleSubmit(onSubmit)}>
             <div className={s.loginField}>
-                <input className={!errors?.email ? s.loginFieldItem : s.withErrorLoginFieldItem}
+                <input className={(!errors?.email || !errors?.common) ? s.loginFieldItem : s.withErrorLoginFieldItem}
                        placeholder={"Email"} {...(register("email", {
                         required: 'This is required field!',
                         pattern: {
@@ -37,7 +38,6 @@ const LoginForm = (props) => {
                         errors={errors}
                         name="email"
                         render={({messages}) => {
-                            console.log('messages: ', messages)
                             return messages
                                 ? Object.entries(messages).map(([type, message]) => (
                                     <div className={s.errorMessage} key={type}>{message}</div>
@@ -49,18 +49,20 @@ const LoginForm = (props) => {
 
             <div className={s.loginField}>
                 <input type={"password"}
-                       className={!errors?.password ? s.loginFieldItem : s.withErrorLoginFieldItem}
+                       className={(!errors?.password || !errors?.common) ? s.loginFieldItem : s.withErrorLoginFieldItem}
                        placeholder={"Password"} {...register("password", {
                     required: 'This is required field!'
                 })}/>
                 {errors?.password && <div className={s.errorMessage}>{errors?.password.message}</div>}
+
             </div>
+            {errors?.common && <div className={s.errorMessage}>{errors?.common.message}</div>}
             <label className={s.rememberMeBlock}>
                 <input className={s.checkbox} {...register("rememberMe")} type="checkbox"/> <span
                 className={s.rememberMeText}>Remember me</span>
             </label>
             <div className={s.buttonBlock}>
-                {!errors?.login && !errors?.password ? <button className={s.loginButton}>Login</button>
+                {!errors?.password ? <button type={"submit"} onClick={() => {clearErrors('common')}} className={s.loginButton}>Login</button>
                     : <button className={s.withErrorLoginButton} disabled={true}>Login</button>}
             </div>
         </form>
