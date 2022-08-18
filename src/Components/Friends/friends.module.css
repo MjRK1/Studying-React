@@ -59,6 +59,7 @@
 }
 .userInfo {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
     word-wrap: break-word;
