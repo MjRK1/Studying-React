@@ -4,6 +4,7 @@ import checkmark from '../../../assets/images/checkmark.png';
 import cross from '../../../assets/images/cross.png';
 import defualtUserImg from '../../../assets/images/user.png'
 import ProfileStatus from './ProfileStatus'
+import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -17,7 +18,7 @@ const ProfileInfo = (props) => {
             <div className={s.descriptionBlock}>
                 <img className={s.profilePhoto}
                      src={props.profile.photos.large ? props.profile.photos.large : defualtUserImg}/>
-                <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
+                <ProfileStatusWithHooks status={props.status} updateUserStatus={props.updateUserStatus}/>
             </div>
 
             <div className={s.userProfileDescription}>

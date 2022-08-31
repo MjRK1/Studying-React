@@ -3,8 +3,9 @@ import Post from "./Post/Post";
 import React from "react";
 import AddPostForm from "./AddPostForm/AddPostForm";
 
-const MyPosts = (props) => {
-    let postsElements = props.posts.map(p => <Post className={postMessage} message={p.message}
+const MyPosts = React.memo((props) => {
+    console.log("RENDER")
+    let postsElements = [...props.posts].reverse().map(p => <Post className={postMessage} message={p.message}
                                                    likesCount={p.likesCount}/>);
 
     return (
@@ -16,7 +17,7 @@ const MyPosts = (props) => {
             </div>
         </div>
     );
-}
+});
 
 
 export default MyPosts
